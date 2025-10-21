@@ -1,6 +1,6 @@
 name: github-events
 on:
-  push
+  workflow_dispatch
 
 jobs:
   my_events_job:

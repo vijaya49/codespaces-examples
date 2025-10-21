@@ -1,0 +1,30 @@
+# The first job, ubuntu-echo, should run on ubuntu-latest and have a single step, named Show OS, which runs a multi-line bash script printing "This job is running on an Ubuntu runner.", and then the runner OS on the next line.
+
+# The second job, windows-echo, should run on windows-latest and have a single step, named Show OS, which runs a multi-line bash script printing "This job is running on a Windows runner.", and then the runner OS on the next line.
+
+# The third job, mac-echo, should run on macos-latest and have a single step, named Show OS, which runs a multi-line bash script printing "This job is running on a MacOS runner.", and then the runner OS on the next line.
+
+
+
+
+
+name: OS finding using GitHub actions workflow
+on:
+    push
+
+jobs:
+    ubuntu-echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: finding os
+              run: echo "this workflow is running on OS $RUNNER_OS"
+    windows-echo:
+        runs-on: windows-latest
+        steps:
+            - name: finding os
+              run: echo "this workflow is running on OS $env:$RUNNER_OS"
+    mac-echo:
+        runs-on: macos-latest
+        steps:
+            - name: finding os
+              run: echo "this workflow is running on OS $RUNNER_OS"
