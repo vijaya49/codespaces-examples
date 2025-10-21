@@ -24,6 +24,7 @@ jobs:
         runs-on: windows-latest
         steps:
             - name: finding os
+              shell: bash
               run: |
                 echo "this workflow is running on OS"
                 echo "running OS is: $RUNNER_OS"
